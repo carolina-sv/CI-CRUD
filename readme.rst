@@ -1,39 +1,91 @@
-###################
-What is CodeIgniter
-###################
+# CI-CRUD - CodeIgniter com MySQL
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+## 📌 Sobre o Projeto
 
-*******************
-Release Information
-*******************
+Este projeto é um CRUD desenvolvido com o framework **CodeIgniter** e utiliza um banco de dados **MySQL** para gerenciar usuários. A aplicação permite cadastrar, listar, editar e excluir usuários através de um painel administrativo.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## 🚀 Tecnologias Utilizadas
 
-**************************
-Changelog and New Features
-**************************
+- **PHP** (CodeIgniter Framework)
+- **MySQL** (phpMyAdmin para gerenciamento)
+- **HTML, CSS, JavaScript** (Front-end básico)
+- **Bootstrap** (para estilização)
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+## 📂 Estrutura do Projeto
 
-*******************
-Server Requirements
-*******************
+```
+/application
+    /controllers
+        Users.php
+    /models
+        User_model.php
+    /views
+        users/
+            index.php
+            create.php
+            edit.php
+/config
+    database.php
+/public
+    index.php
+```
 
-PHP version 5.6 or newer is recommended.
+## 🛠️ Configuração do Banco de Dados
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+1. Crie um banco de dados no **phpMyAdmin** ou via terminal:
+   ```sql
+   CREATE DATABASE ci_crud;
+   ```
+2. Configure a conexão no arquivo `application/config/database.php`:
+   ```php
+   $db['default'] = array(
+       'dsn'   => '',
+       'hostname' => 'localhost',
+       'username' => 'root',
+       'password' => '',
+       'database' => 'ci_crud',
+       'dbdriver' => 'mysqli',
+       'dbprefix' => '',
+       'pconnect' => FALSE,
+       'db_debug' => TRUE,
+   );
+   ```
+3. Importe a estrutura inicial do banco de dados (`ci_crud.sql`) localizada na raiz do projeto:
+   ```sh
+   mysql -u root -p ci_crud < ci_crud.sql
+   ```
+
+## 📌 Rotas Principais
+
+- **`/users`** → Lista todos os usuários
+- **`/users/create`** → Formulário de cadastro
+- **`/users/edit/{id}`** → Editar usuário
+- **`/users/delete/{id}`** → Deletar usuário
+
+## ▶️ Como Rodar o Projeto
+
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/carolina-sv/CI-CRUD.git
+   ```
+2. Acesse a pasta do projeto:
+   ```sh
+   cd CI-CRUD
+   ```
+3. Inicie o servidor embutido do PHP:
+   ```sh
+   php -S localhost:8080 -t public/
+   ```
+4. Acesse no navegador:
+   ```sh
+   http://localhost:8080
+   ```
+
+##
+
+[Repositório no GitHub](https://github.com/carolina-sv/CI-CRUD)
+
+
 
 ************
 Installation
