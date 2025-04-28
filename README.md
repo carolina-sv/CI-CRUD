@@ -1,123 +1,74 @@
+
 # CI-CRUD - CodeIgniter com MySQL
 
-## 📌 Sobre o Projeto
 
-Este projeto é um CRUD desenvolvido com o framework **CodeIgniter** e utiliza um banco de dados **MySQL** para gerenciar usuários. A aplicação permite cadastrar, listar, editar e excluir usuários através de um painel administrativo.
 
-## 🚀 Tecnologias Utilizadas
+# 📖 About
+🤖This project is a CRUD developed with the **CodeIgniter** framework and uses a **MySQL** database to manage users. The application allows you to create, list, edit, and delete users through an administrative panel.
 
-- **PHP** (CodeIgniter Framework)
-- **MySQL** (phpMyAdmin para gerenciamento)
-- **HTML, CSS, JavaScript** (Front-end básico)
-- **Bootstrap** (para estilização)
+# 🛠️ Technologies
+🖥️- **PHP** (CodeIgniter Framework)  
+🖥️- **MySQL** (phpMyAdmin for management)  
+🖥️- **HTML, CSS, JavaScript** (Basic front-end)  
+🖥️- **Bootstrap** (for styling)
 
-## 📂 Estrutura do Projeto
+# ⚙️ How to Run the Project
+🧰 Prerequisites  
+- PHP 7.4+  
+- MySQL  
+- Composer (optional, if you want to manage dependencies)  
 
-```
-/application
-    /controllers
-        Users.php
-    /models
-        User_model.php
-    /views
-        users/
-            index.php
-            create.php
-            edit.php
-/config
-    database.php
-/public
-    index.php
-```
+# 📥 Installation
+Clone the repository:
 
-## 🛠️ Configuração do Banco de Dados
+git clone https://github.com/carolina-sv/CI-CRUD.git
 
-1. Crie um banco de dados no **phpMyAdmin** ou via terminal:
-   ```sql
-   CREATE DATABASE ci_crud;
-   ```
-2. Configure a conexão no arquivo `application/config/database.php`:
-   ```php
-   $db['default'] = array(
-       'dsn'   => '',
-       'hostname' => 'localhost',
-       'username' => 'root',
-       'password' => '',
-       'database' => 'ci_crud',
-       'dbdriver' => 'mysqli',
-       'dbprefix' => '',
-       'pconnect' => FALSE,
-       'db_debug' => TRUE,
-   );
-   ```
-3. Importe a estrutura inicial do banco de dados (`ci_crud.sql`) localizada na raiz do projeto:
-   ```sh
-   mysql -u root -p ci_crud < ci_crud.sql
-   ```
+cd CI-CRUD
 
-## 📌 Rotas Principais
 
-- **`/users`** → Lista todos os usuários
-- **`/users/create`** → Formulário de cadastro
-- **`/users/edit/{id}`** → Editar usuário
-- **`/users/delete/{id}`** → Deletar usuário
+# ▶️ Run
+Init your developer server:
 
-## ▶️ Como Rodar o Projeto
+npm run dev
+ or
+yarn dev
+The project runs in: http://localhost:8080
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/carolina-sv/CI-CRUD.git
-   ```
-2. Acesse a pasta do projeto:
-   ```sh
-   cd CI-CRUD
-   ```
-3. Inicie o servidor embutido do PHP:
-   ```sh
-   php -S localhost:8080 -t public/
-   ```
-4. Acesse no navegador:
-   ```sh
-   http://localhost:8080
-   ```
+# 📂 Project Structure
+📁 application  
+├── 📂 controllers           # Controllers of the application  
+│   └── 📄 Users.php         # Controller for managing users  
+├── 📂 models                # Application models  
+│   └── 📄 User_model.php    # User model for database interactions  
+├── 📂 views                 # Views for user interface  
+│   └── 📂 users             # Views related to users  
+│       ├── 📄 index.php     # Page for listing users  
+│       ├── 📄 create.php    # Page for creating a new user  
+│       └── 📄 edit.php      # Page for editing an existing user  
+📁 config  
+├── 📄 database.php          # Database configuration  
+📁 public  
+├── 📄 index.php             # Front controller (entry point of the application)  
 
-##
 
-[Repositório no GitHub](https://github.com/carolina-sv/CI-CRUD)
+# ✨ Contributions
+Contributions are welcome! Follow the steps below:
+
+Fork the repository.
+Create a branch for your feature: git checkout -b my-feature.
+Submit your changes: git push origin my-feature.
+Open a Pull Request.
+
+# 📄 License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+# 🛡️ Contact
+For questions or suggestions, please contact us:
+**Developer Name**
+
+📧 Email: carollinasilva057@gmail.com
+
+💼 LinkedIn: Carolina Viana
 
 
 
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
